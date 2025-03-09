@@ -128,7 +128,7 @@ class ArticleAdapter(
                     mContext.showToast(mContext.getString(R.string.no_network))
                     return@setOnClickListener
                 }
-                ArticleActivity.actionStart(mContext, data)
+//                ArticleActivity.actionStart(mContext, data)
                 val browseHistoryDao = PlayDatabase.getDatabase(mContext).browseHistoryDao()
                 launch(Dispatchers.IO) {
                     if (browseHistoryDao.getArticle(data.id, HISTORY) == null) {
