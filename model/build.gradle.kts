@@ -62,9 +62,6 @@ dependencies {
     val roomVersion = "2.6.1"
     api("androidx.room:room-runtime:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
-    // For Kotlin use kapt instead of annotationProcessor
-
-    // optional - Kotlin Extensions and Coroutines support for Room
     api("androidx.room:room-ktx:$roomVersion")
 
     testImplementation("${rootProject.extra["junit"] as String?}")

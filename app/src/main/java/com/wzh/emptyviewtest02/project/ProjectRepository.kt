@@ -13,16 +13,9 @@ import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.flow.first
 import javax.inject.Inject
 
-/**
- * 版权：Zhujiang 个人版权
- *
- * @author zhujiang
- * 创建日期：2020/9/10
- * 描述：PlayAndroid
- *
- */
+
 @ActivityRetainedScoped
-class ProjectRepository @Inject constructor(val application: Application) {
+class ProjectRepository @Inject constructor(private val application: Application) {
 
     private val projectClassifyDao = PlayDatabase.getDatabase(application).projectClassifyDao()
     private val articleListDao = PlayDatabase.getDatabase(application).browseHistoryDao()

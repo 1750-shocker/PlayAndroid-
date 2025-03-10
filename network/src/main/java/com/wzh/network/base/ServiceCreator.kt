@@ -35,7 +35,6 @@ object ServiceCreator {
                 val response = it.proceed(request)
                 val requestUrl = request.url().toString()
                 val domain = request.url().host()
-                // set-cookie maybe has multi, login to save cookie
                 if ((requestUrl.contains(SAVE_USER_LOGIN_KEY) || requestUrl.contains(
                         SAVE_USER_REGISTER_KEY
                     ))
@@ -80,7 +79,6 @@ object ServiceCreator {
      */
     fun <T> create(service: Class<T>): T = create().create(service)
 
-    @Suppress("ASSIGNED_BUT_NEVER_ACCESSED_VARIABLE")
     private fun saveCookie(url: String?, domain: String?, cookies: String) {
         url ?: return
         DataStoreUtils.putSyncData(url, cookies)
